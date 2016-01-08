@@ -1,7 +1,10 @@
 package io.prometheus.client.stream;
 
 /**
- * Created by warebot on 1/4/16.
+ *  The invariant function responsible for calculating the delta/acceptable error for a rank.
+ *
+ *  Reference:
+ *  Section 4; Definition 4.
  */
 public class TargetedQuantileInvariant extends Invariant {
     private Quantile[] quantiles;

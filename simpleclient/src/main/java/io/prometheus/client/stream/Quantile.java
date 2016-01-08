@@ -1,10 +1,6 @@
 package io.prometheus.client.stream;
 
 /**
- * Created by warebot on 12/27/15.
- */
-
-/**
  * <p>
  * Quantile is an invariant for estimation with {@link Stream}.
  * </p>
@@ -43,14 +39,6 @@ public class Quantile {
 
     public double getError() {
         return error;
-    }
-
-    public double f(double r, int n) {
-        if (r <= Math.floor(quantile * n)) {
-            return (2.0 * error * (n - r)) / (1.0 - quantile);
-        } else {
-            return (2.0 * error * r) / quantile;
-        }
     }
 
 }

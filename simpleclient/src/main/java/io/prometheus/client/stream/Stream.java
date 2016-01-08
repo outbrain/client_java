@@ -3,7 +3,9 @@ package io.prometheus.client.stream;
 import java.util.Map;
 
 /**
- * Created by warebot on 1/4/16.
+ * A stream of data-points that is responsible to summarize/compute quantiles for the collected data.
+ *
+ * @param <T> The data-type of the items consumed in the Stream
  */
 public interface Stream<T extends Number & Comparable<T>> {
     void insert(T v);
