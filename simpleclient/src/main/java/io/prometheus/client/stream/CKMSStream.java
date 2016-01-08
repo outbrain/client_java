@@ -126,7 +126,7 @@ public class CKMSStream<T extends Number & Comparable<T>> implements Stream<T> {
             } else {
                 delta = (int) Math.floor(f(ri, count.get())) - 1;
             }
-            iterator.add(new Sample(v, 1, delta, ri));
+            iterator.add(new Sample(v, 1, delta));
 
             // TODO
             // Rewinding the iterator to the beginning of list for every item in the merge process might not be the
@@ -236,21 +236,12 @@ public class CKMSStream<T extends Number & Comparable<T>> implements Stream<T> {
     private class Sample {
         final T value;
         int g;
-        int rank;
-
         final int delta;
 
         public Sample(final T value, final int lowerDelta, final int delta) {
             this.value = value;
             this.g = lowerDelta;
             this.delta = delta;
-        }
-
-        public Sample(final T value, final int lowerDelta, final int delta, int rank) {
-            this.value = value;
-            this.g = lowerDelta;
-            this.delta = delta;
-            this.rank = rank;
         }
 
         @Override
